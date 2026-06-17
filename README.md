@@ -23,7 +23,7 @@ I'm currently going deep on bare-metal STM32 and FreeRTOS, building toward the t
 **Hardware:** STM32F411RE Nucleo · ESP32 · logic analyzer · oscilloscope
 **Next on the roadmap:** embedded Linux (Buildroot/Yocto, device trees, kernel modules) → ROS2
 
--
+---
 
 ## Featured projects
 
