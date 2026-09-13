@@ -2,7 +2,7 @@
 
 **Embedded firmware engineer in training. Bare-metal C, ARM Cortex-M, FreeRTOS.**
 
-CS student at Penn State and co-founder of [JSRobotics](#-https://jsrobotics.uz/). I write firmware the hard way, straight against the reference manual, no HAL, no code generators; I love to actually understand the silicon, not click through a wizard.
+CS student at Penn State and founder at [Rovion Controls](#-https://www.rovioncontrols.com/en). I write firmware the hard way, straight against the reference manual, no HAL, no code generators; I love to actually understand the silicon, not click through a wizard.
 
 I'm currently going deep on bare-metal STM32 and FreeRTOS, building toward the two-processor robotics architecture (real-time MCU + Linux/ROS2 compute) that serious robotics platforms run on.
 
