@@ -1,70 +1,51 @@
-# Hi, I'm Javohir 
+# Javokhir Tuychiyev
 
-**Embedded firmware engineer in training. Bare-metal C, ARM Cortex-M, FreeRTOS.**
+Embedded software engineer. Register-level firmware written from datasheets and
+reference manuals, no vendor HAL — with the evidence kept: logic analyzer
+captures, unit tests in CI, and writeups of what broke.
 
-CS student at Penn State and founder at [Rovion Controls](#-https://www.rovioncontrols.com/en). I write firmware the hard way, straight against the reference manual, no HAL, no code generators; I love to actually understand the silicon, not click through a wizard.
+A profile page is claims. The repos are the proof.
 
-I'm currently going deep on bare-metal STM32 and FreeRTOS, building toward the two-processor robotics architecture (real-time MCU + Linux/ROS2 compute) that serious robotics platforms run on.
+## Where to look
 
----
+**[sentinel-node](https://github.com/javokhirt/sentinel-node)** — open this one
+first. A bare-metal STM32F411 environmental sensor node: I2C master and SHT3x
+drivers written from RM0383 and the sensor datasheet. Every reading is
+CRC-verified — 1,320 readings over 22 minutes, zero failures, captured off the
+wire with a Saleae. Host-compiled unit tests run in CI on every push. The docs
+include a build log, design decisions, and bug hunts — including an ACK race on
+the last byte of an I2C read, caught in the reference manual before it ever ran.
+If you want to know how I debug, start with the bug hunts.
 
-## I work with:
+**[stm32-bare-metal](https://github.com/javokhirt/stm32-bare-metal)** — where it
+started. Fourteen self-contained projects from raw GPIO register writes to timer
+output-compare. No HAL, no CubeMX.
 
-![C](https://img.shields.io/badge/C-00599C?style=flat-square&logo=c&logoColor=white)
-![C++](https://img.shields.io/badge/C++-00599C?style=flat-square&logo=cplusplus&logoColor=white)
-![ARM](https://img.shields.io/badge/ARM_Cortex--M-0091BD?style=flat-square&logo=arm&logoColor=white)
-![STM32](https://img.shields.io/badge/STM32-03234B?style=flat-square&logo=stmicroelectronics&logoColor=white)
-![FreeRTOS](https://img.shields.io/badge/FreeRTOS-37AA4F?style=flat-square)
-![ESP32](https://img.shields.io/badge/ESP32-E7352C?style=flat-square&logo=espressif&logoColor=white)
+Sentinel-node is the sensor layer of [Rovion Controls](https://www.rovioncontrols.com/en),
+an agritech company I'm building. The firmware I've written in industry — STM32
+work at an electronics laboratory in Tashkent, including a CANSAT program — is
+private IP, so everything public here is built from scratch, in the open.
 
-**Firmware:** bare-metal C, register-level peripheral drivers, interrupts/NVIC, DMA, FreeRTOS (tasks, queues, semaphores, mutexes)
-**Protocols:** UART, SPI, I2C, CAN, PWM, ADC
-**Toolchain:** `arm-none-eabi-gcc` · Make · OpenOCD · GDB/SWD — no IDE, terminal-driven
-**Hardware:** STM32F411RE Nucleo · ESP32 · logic analyzer · oscilloscope
-**Next on the roadmap:** embedded Linux (Buildroot/Yocto, device trees, kernel modules) → ROS2
+## How I work
 
----
+Read the manual before writing the code. Split drivers so the logic compiles on
+the host and gets tested there. When something breaks, capture it on the wire
+and write down what happened.
 
-## Featured projects
+## Stack
 
-> Building these in public over summer 2026. 
+C on ARM Cortex-M (STM32F4). `arm-none-eabi-gcc`, Make, OpenOCD, GDB over SWD —
+terminal only, no IDE. Saleae for anything on a bus. Unity tests on the host,
+run in GitHub Actions.
 
-| Project | What it demonstrates | Status |
-|---|---|---|
-| **[bare-metal-stm32-uart](#)** | Interrupt-driven UART driver with TX/RX ring buffers. No HAL — written against RM0383. | in progress |
-| **[stm32-motor-controller](#)** | Closed-loop DC motor control: encoder input capture + PI loop running as FreeRTOS tasks at 1 kHz. | in progress |
-| **[stm32-fault-forensics](#)** | Hard-fault handler that decodes the exception stack frame and reports the faulting PC over UART. | in progress |
-| **[esp32-sumo-robot](#)** | Autonomous sumo robot — sensor reading, motor control, decision logic. | done |
+## Now
 
-<!-- Replace the (#) links with real repo URLs as each project ships.
-     Each repo should have: a demo GIF/photo, wiring diagram, build/flash steps,
-     and a "How it works" section explaining one non-obvious technical decision. -->
+- **Open to Summer 2027 embedded software / firmware internships.**
+- CS student at Penn State.
+- Next on sentinel-node: FreeRTOS with sensor and radio tasks, a register-level
+  SX126x-family LoRa driver, then a custom PCB.
 
----
+## Contact
 
-## JSRobotics (Robotics LMS Project)
-
-Co-founder & CEO of **JSRobotics**, a project-based robotics & electronics education platform aimed at students in Uzbekistan — curriculum, product, and hands-on hardware mentoring. Long-term I'm building toward a hardware–software company at the intersection of firmware, embedded Linux, and robotics.
-
----
-
-## 📍 Currently
-
--  Embedded Software Engineer intern — Inno Technopark Electronics Lab (STM32 firmware, CANSAT project)
--  Working through a self-directed bare-metal → FreeRTOS → embedded Linux roadmap
--  Targeting Summer 2027 embedded/firmware internships
-
----
-
-## Connect
- 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/javokhir-tuychiyev/)
-[![Email](https://img.shields.io/badge/Email-D14836?style=flat-square&logo=gmail&logoColor=white)](mailto:javokhir.tuychiyev16@gmail.com)
-
-<!-- Replace your-handle and your-email above. -->
-
-<!--
-SETUP NOTE: To make this show on your GitHub profile, create a repository
-named EXACTLY the same as your GitHub username (e.g. github.com/javohir/javohir),
-make it public, and put this file in it as README.md.
--->
+[LinkedIn](https://www.linkedin.com/in/javokhir-tuychiyev/) ·
+javokhir.tuychiyev16@gmail.com
