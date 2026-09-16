@@ -15,8 +15,7 @@ include a build log, design decisions, and bug hunts — including an ACK race o
 the last byte of an I2C read, caught in the reference manual before it ever ran.
 If you want to know how I debug, start with the bug hunts.
 
-**[stm32-bare-metal](https://github.com/javokhirt/stm32-bare-metal)** — where it
-started. Fourteen self-contained projects from raw GPIO register writes to timer
+**[stm32-bare-metal](https://github.com/javokhirt/stm32-bare-metal)** — My peripheral drivers. Fourteen self-contained projects from raw GPIO register writes to timer
 output-compare. No HAL, no CubeMX.
 
 Sentinel-node is the sensor layer of [Rovion Controls](https://www.rovioncontrols.com/en),
