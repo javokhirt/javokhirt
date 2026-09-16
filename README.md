@@ -4,7 +4,6 @@ Embedded software engineer. Register-level firmware written from datasheets and
 reference manuals, no vendor HAL — with the evidence kept: logic analyzer
 captures, unit tests in CI, and writeups of what broke.
 
-A profile page is claims. The repos are the proof.
 
 ## Where to look
 
