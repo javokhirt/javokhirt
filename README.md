@@ -7,8 +7,7 @@ captures, unit tests in CI, and writeups of what broke.
 
 ## Where to look
 
-**[sentinel-node](https://github.com/javokhirt/sentinel-node)** — open this one
-first. A bare-metal STM32F411 environmental sensor node: I2C master and SHT3x
+**[sentinel-node](https://github.com/javokhirt/sentinel-node)** — A bare-metal STM32F411 environmental sensor node: I2C master and SHT3x
 drivers written from RM0383 and the sensor datasheet. Every reading is
 CRC-verified — 1,320 readings over 22 minutes, zero failures, captured off the
 wire with a Saleae. Host-compiled unit tests run in CI on every push. The docs
