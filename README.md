@@ -1,4 +1,4 @@
-# Javohir Tuychiyev
+# Javohir Tuychiev
 
 Embedded software engineer. Register-level firmware written from datasheets and
 reference manuals, no vendor HAL — with the evidence kept: logic analyzer
